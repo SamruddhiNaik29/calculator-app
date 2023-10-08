@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> This Is My  Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1> My Calculator:</h1>
+    <form method="POST">
+        <input type="number" name="num1" placeholder=" Your First Number:" required><br><br>
+
+        <select name="operation" required>
+            <option value="add"><h2>Addtion</h2></option>
+            <option value="subtract"><h2>Subtraction</h2></option>
+            <option value="multiply"><h2>multiplcation</h2></option>
+            <option value="divide"><h2>Division</h2></option>
+        </select><br><br>
+
+        <input type="number" name="num2" placeholder=" Your Second Number:" required><br><br>
+
+        <input type="submit" value="Calculation Is:">
+    </form>
+
+    {% if result %}
+    <h3>Result: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
